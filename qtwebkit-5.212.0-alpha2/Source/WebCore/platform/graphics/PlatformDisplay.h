@@ -33,6 +33,11 @@
 typedef void *EGLDisplay;
 #endif
 
+#if PLATFORM(WAYLAND)
+// dont include xlib headers
+#define MESA_EGL_NO_X11_HEADERS
+#endif
+
 namespace WebCore {
 
 class PlatformDisplay {
